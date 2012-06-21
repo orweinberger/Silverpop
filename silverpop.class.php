@@ -34,6 +34,22 @@ class Silverpop {
 		return $array;
 	}
 	
+	public function RemoveRecipient($list_id,$email) {
+		$postdata = "<RemoveRecipient><LIST_ID>" . $list_id . "</LIST_ID><EMAIL>" . $email . "</EMAIL></RemoveRecipient>";
+		$podurl = $this->podurl . ";jsessionid=" . $this->sessionId;
+		$curlData = $this->curlPost($podurl,$postdata,$this->proxy);
+		$array = $this->convertXML($curlData);
+		return $array;
+	}
+	
+	public function ListDCRulesetsForMailing($template_id) {
+		$postdata = "<ListDCRulesetsForMailing><MAILING_ID>" . $template_id . "</MAILING_ID></ListDCRulesetsForMailing>";
+		$podurl = $this->podurl . ";jsessionid=" . $this->sessionId;
+		$curlData = $this->curlPost($podurl,$postdata,$this->proxy);
+		$array = $this->convertXML($curlData);
+		return $array;
+	}
+	
 	private function curlPost($url,$postdata,$proxy) {
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_URL, $url);
