@@ -1,0 +1,9 @@
+This is an implementation of the Silverpop API for PHP.
+
+I have created two classes, the Silverpop class and the SilverpopWrapper class.
+
+The Silverpop class is a simpler way of executing API calls, but lacks some of the more advanced functionality like some of the optional flags/features of different API calls.
+
+The SilverpopWrapper class can be used to channel any request to the Silverpop API.
+
+See example files for more info.
